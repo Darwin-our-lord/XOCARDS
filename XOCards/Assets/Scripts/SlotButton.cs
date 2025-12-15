@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class SlotButton : MonoBehaviour
+public class SlotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public int slotIndex; 
     public GameManager manager;
@@ -32,5 +34,18 @@ public class SlotButton : MonoBehaviour
         {
             Debug.Log($"Invalid target for card: {cardToUse.m_cardName}. Try again.");
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        this.gameObject.GetComponent<Image>().color = Color.gray;
+
+    }
+
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        this.gameObject.GetComponent<Image>().color = Color.white;
+
     }
 }

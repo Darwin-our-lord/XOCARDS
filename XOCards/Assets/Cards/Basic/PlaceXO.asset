@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6369c88344c08e54b959e198c8e1fafa, type: 3}
-  m_Name: BasicMoveCard
+  m_Name: PlaceXO
   m_EditorClassIdentifier: 
   m_cardName: Basic x/o
   m_description: place an x or o

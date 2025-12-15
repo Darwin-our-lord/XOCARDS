@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class CardSelect : MonoBehaviour
+public class CardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
     public Card card;
@@ -17,5 +19,18 @@ public class CardSelect : MonoBehaviour
     public void CardPressed()
     {
         manager.SelectCardToPlay(card);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        this.gameObject.GetComponent<Image>().color = Color.gray;
+
+    }
+
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        this.gameObject.GetComponent<Image>().color = Color.white;
+
     }
 }

@@ -26,11 +26,10 @@ public class GameManager : MonoBehaviour
         UpdateTurnUI();
     }
 
-    // Called when a card is clicked in the hand
     public void SelectCardToPlay(Card card)
     {
         Player activePlayer = playerXturn ? playerX : playerO;
-        if (!activePlayer.hand.Contains(card)) return; // Safety check
+        if (!activePlayer.hand.Contains(card)) return; 
 
         if (card.requiresTarget)
         {
@@ -39,20 +38,16 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Card does not require a target (e.g. Draw Card)
             if (card.effect.Activate(this, -1))
             {
-                // If immediate effect succeeded, consume the card
                 activePlayer.hand.Remove(card);
                 selectedActiveCard = null;
-                // Immediate effects usually don't end the turn, but depend on your rules.
-                // If it ends the turn: PassTurn();
+
                 handUI.UpdateHandVisuals(activePlayer);
             }
         }
     }
 
-    // Called by SlotButton when any card (default or special) successfully activated
     public void OnCardPlayedSuccess()
     {
         CheckForWin();
@@ -62,7 +57,7 @@ public class GameManager : MonoBehaviour
     public void PassTurn()
     {
         playerXturn = !playerXturn;
-        selectedActiveCard = null; // Clear special selection
+        selectedActiveCard = null; 
 
         Player nextPlayer = playerXturn ? playerX : playerO;
         nextPlayer.DrawCard();
