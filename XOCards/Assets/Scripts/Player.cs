@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
-    public List<Card> deck = new List<Card>(); // Use this for your initial deck
+    public List<Card> deck = new List<Card>(); 
     public List<Card> hand = new List<Card>();
 
     public int maxHandSize = 7;

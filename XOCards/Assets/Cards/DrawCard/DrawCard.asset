@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6369c88344c08e54b959e198c8e1fafa, type: 3}
+  m_Name: DrawCard
+  m_EditorClassIdentifier: 
+  m_cardName: Drawer
+  m_description: Draw a card
+  m_sprite: {fileID: 7635723995111643501, guid: 422c5dd5e30b63a4db511b55f9a84dd6, type: 3}
+  requiresTarget: 0
+  effect: {fileID: 11400000, guid: f69b90fbe96f98944a6552c9b3e2c381, type: 2}

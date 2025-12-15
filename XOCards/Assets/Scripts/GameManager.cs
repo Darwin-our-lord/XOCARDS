@@ -5,8 +5,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Game State")]
     public bool playerXturn = true;
-    public Card selectedActiveCard; // The special card the player chose from hand
-    public Card defaultMoveCard;    // THE CARD USED FOR NORMAL X/O PLACEMENT
+    public Card selectedActiveCard; 
 
     [Header("References")]
     public XOPlacement XOPlacement;
@@ -44,6 +43,7 @@ public class GameManager : MonoBehaviour
                 selectedActiveCard = null;
 
                 handUI.UpdateHandVisuals(activePlayer);
+                OnCardPlayedSuccess();
             }
         }
     }

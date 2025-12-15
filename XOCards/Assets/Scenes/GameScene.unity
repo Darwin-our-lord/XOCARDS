@@ -755,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -726.77454, y: 476.5711}
-  m_SizeDelta: {x: 452.0776, y: 78.6777}
+  m_AnchoredPosition: {x: -697.44086, y: 463.2376}
+  m_SizeDelta: {x: 510.2707, y: 106.3645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541335196
 MonoBehaviour:
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.4
+  m_fontSize: 95.2
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1605,11 +1605,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
   - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
   - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
+  - {fileID: 11400000, guid: 1ece5e3bdf41c7045a0f3a415009a902, type: 2}
   - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
   - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
+  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
+  - {fileID: 11400000, guid: 1ece5e3bdf41c7045a0f3a415009a902, type: 2}
   - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
   - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
   hand: []
@@ -2121,11 +2121,11 @@ MonoBehaviour:
   deck:
   - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
   - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
+  - {fileID: 11400000, guid: 1ece5e3bdf41c7045a0f3a415009a902, type: 2}
   - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
   - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
   - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
+  - {fileID: 11400000, guid: 1ece5e3bdf41c7045a0f3a415009a902, type: 2}
   - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
   - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
   - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
@@ -2324,7 +2324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerXturn: 1
   selectedActiveCard: {fileID: 0}
-  defaultMoveCard: {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
   XOPlacement: {fileID: 1409887530}
   playerX: {fileID: 1585991094}
   playerO: {fileID: 1204771562}
@@ -2384,7 +2383,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 42.288, y: -388.43}
-  m_SizeDelta: {x: -758.7853, y: -776.8518}
+  m_SizeDelta: {x: -465.45, y: -776.8518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1835498676
 MonoBehaviour:
