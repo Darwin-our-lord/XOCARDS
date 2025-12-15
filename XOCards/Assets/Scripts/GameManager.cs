@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartDraw();
+        PassTurn();
         UpdateTurnUI();
     }
 
@@ -70,7 +71,7 @@ public class GameManager : MonoBehaviour
     }
     void StartDraw()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 2; i++)
         {
             playerO.DrawCard();
             playerX.DrawCard();
