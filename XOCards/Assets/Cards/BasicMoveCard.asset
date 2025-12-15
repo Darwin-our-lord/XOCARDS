@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6369c88344c08e54b959e198c8e1fafa, type: 3}
   m_Name: BasicMoveCard
   m_EditorClassIdentifier: 
-  m_cardName: hello
-  m_description: sigm
-  m_sprite: {fileID: 0}
+  m_cardName: Basic x/o
+  m_description: place an x or o
+  m_sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   requiresTarget: 1
   effect: {fileID: 11400000, guid: f5a2c363f0dc7674783bce99fc3c2fe7, type: 2}
