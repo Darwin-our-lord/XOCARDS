@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -7,6 +10,21 @@ public class Player : MonoBehaviour
     public List<Card> hand = new List<Card>();
 
     public int maxHandSize = 7;
+
+
+    public void Shuffle()
+    {
+        int n = deck.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = UnityEngine.Random.Range(0, n + 1);
+
+            Card value = deck[k];
+            deck[k] = deck[n];
+            deck[n] = value;
+        }
+    }
 
     public void DrawCard()
     {

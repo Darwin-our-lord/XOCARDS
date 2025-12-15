@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        playerX.Shuffle();
+        playerO.Shuffle();
         StartDraw();
         PassTurn();
         UpdateTurnUI();
