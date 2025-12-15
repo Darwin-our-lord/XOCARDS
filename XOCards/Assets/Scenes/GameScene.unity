@@ -1601,17 +1601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183691fe6b4b5dd4da406534164dfc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck:
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: 1ece5e3bdf41c7045a0f3a415009a902, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: 1ece5e3bdf41c7045a0f3a415009a902, type: 2}
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
+  deck: {fileID: 11400000, guid: ded92af7f27959642b06b3e508119143, type: 2}
   hand: []
   maxHandSize: 7
 --- !u!4 &1204771563
@@ -2118,17 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183691fe6b4b5dd4da406534164dfc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck:
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
-  - {fileID: 11400000, guid: 1ece5e3bdf41c7045a0f3a415009a902, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: 1ece5e3bdf41c7045a0f3a415009a902, type: 2}
-  - {fileID: 11400000, guid: 83b1b56bb91b5a34f86f83023d6d7640, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
-  - {fileID: 11400000, guid: d231fef18c00f1f428fc413dcd8ea0bd, type: 2}
+  deck: {fileID: 11400000, guid: 48b9ffa2f85c41145836c2726c62f377, type: 2}
   hand: []
   maxHandSize: 7
 --- !u!4 &1585991095
