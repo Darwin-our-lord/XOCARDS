@@ -1,18 +1,21 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
+    public List<Card> deck = new List<Card>(); // Use this for your initial deck
+    public List<Card> hand = new List<Card>();
 
+    public int maxHandSize = 7;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void DrawCard()
     {
-        
-    }
+        if (deck.Count > 0 && hand.Count < maxHandSize)
+        {
+            Card drawnCard = deck[0];
+            deck.RemoveAt(0);
+            hand.Add(drawnCard);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }

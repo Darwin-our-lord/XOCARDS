@@ -13,10 +13,12 @@ public class Card : ScriptableObject
     #region ALLWAYS
     [Header("Variables")]
     public string m_cardName;
+    [TextArea] public string m_description;
     public Sprite m_sprite;
-    public CardType m_type;
 
-    public CardEffect[] card_effect;
+    public bool requiresTarget = true;
+
+    public CardEffect effect;
 
     [Header("Table effect")]
     int duration;

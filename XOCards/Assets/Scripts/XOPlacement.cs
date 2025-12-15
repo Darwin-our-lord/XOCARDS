@@ -4,36 +4,21 @@ using UnityEngine.UI;
 public class XOPlacement : MonoBehaviour
 {
     public GameObject[] slots;
-    public int[] ownedSlots = new int[]
-    {
-        2,2,2,2,2,2,2,2,2 // "9"
-    };
-    private bool[] interactableSlots = new bool[]
-    {
-        true,true,true,true,true,true,true,true,true // "9"
-    };
 
-    public GameManager Manager;
+    public int[] ownedSlots = new int[] { 2, 2, 2, 2, 2, 2, 2, 2, 2 };
 
     public Sprite XSprite;
     public Sprite OSprite;
+    public Sprite EmptySprite; 
 
-    public void PlaceXO(int slotNr)
+    public void ModifySlot(int slotNr, int newOwner)
     {
-        if (interactableSlots[slotNr]) 
-        {
-            if (Manager.playerXturn) ownedSlots[slotNr] = 1;
-            else if (!Manager.playerXturn) ownedSlots[slotNr] = 0;
+        ownedSlots[slotNr] = newOwner;
 
+        Image slotImage = slots[slotNr].GetComponent<Image>();
 
-            if (Manager.playerXturn) slots[slotNr].GetComponent<Image>().sprite = XSprite;
-            else if (!Manager.playerXturn) slots[slotNr].GetComponent<Image>().sprite = OSprite;
-
-            interactableSlots[slotNr] = false;
-
-            Manager.PassTurn();
-            Manager.CheckForWin();
-        }
-
+        if (newOwner == 1) slotImage.sprite = XSprite;
+        else if (newOwner == 0) slotImage.sprite = OSprite;
+        else slotImage.sprite = EmptySprite;
     }
 }

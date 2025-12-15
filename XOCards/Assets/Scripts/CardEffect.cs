@@ -1,10 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "new CardEffect", menuName = "CardEffect")]
-public class CardEffect : ScriptableObject
+public abstract class CardEffect : ScriptableObject
 {
-    public CardEffect()
-    {
-
-    }
+    public abstract bool Activate(GameManager gm, int targetIndex = -1);
 }
