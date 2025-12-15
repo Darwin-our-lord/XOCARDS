@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Initial setup
+        StartDraw();
         UpdateTurnUI();
     }
 
@@ -68,7 +68,15 @@ public class GameManager : MonoBehaviour
 
         UpdateTurnUI();
     }
+    void StartDraw()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            playerO.DrawCard();
+            playerX.DrawCard();
+        }
 
+    }
     void UpdateTurnUI()
     {
         Player activePlayer = playerXturn ? playerX : playerO;

@@ -10,13 +10,11 @@ public class HandUI : MonoBehaviour
 
     public void UpdateHandVisuals(Player player)
     {
-        // Clear existing UI
         foreach (Transform child in handContainer)
         {
             Destroy(child.gameObject);
         }
 
-        // Recreate UI for cards in the hand
         foreach (Card card in player.hand)
         {
             GameObject cardObj = Instantiate(cardPrefab, handContainer);
@@ -27,8 +25,14 @@ public class HandUI : MonoBehaviour
                 display.SetData(card);
             }
 
+            CardSelect cardSelect = cardObj.GetComponent<CardSelect>();
+            if (cardSelect != null)
+            {
+                cardSelect.SetCard(card);
+            }
+
             // Set the listener to tell the GameManager which card was clicked
-            cardObj.GetComponent<Button>().onClick.AddListener(() => manager.SelectCardToPlay(card));
+            cardObj.GetComponentInChildren<Button>().onClick.AddListener(() => manager.SelectCardToPlay(card));
         }
     }
 }
