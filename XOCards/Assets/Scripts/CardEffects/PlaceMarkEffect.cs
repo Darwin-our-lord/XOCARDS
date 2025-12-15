@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Card Effects/Place Mark (Basic Move)")]
+[CreateAssetMenu(menuName = "Card Effects/Place Mark")]
 public class PlaceMarkEffect : CardEffect
 {
     public override bool Activate(GameManager gm, int targetIndex)
