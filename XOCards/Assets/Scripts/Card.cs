@@ -10,7 +10,7 @@ public enum CardType
 [CreateAssetMenu(fileName = "new card", menuName = "Card")]
 public class Card : ScriptableObject
 {
-    #region ALLWAYS
+
     [Header("Variables")]
     public string m_cardName;
     [TextArea] public string m_description;
@@ -26,6 +26,6 @@ public class Card : ScriptableObject
     [Header("Timed effect")]
     int delay;
 
-    #endregion
+
 
 }

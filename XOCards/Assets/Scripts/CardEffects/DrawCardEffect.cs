@@ -8,14 +8,16 @@ public class DrawCardEffect : CardEffect
         if (gm.playerXturn)
         {
             gm.playerX.DrawCard();
+            Debug.LogError("fail 1");
         }
         else if (!gm.playerXturn)
         {
             gm.playerO.DrawCard();
+            Debug.LogError("fail 2 ");
         }
         else 
         {
-            Debug.LogError("fail");
+            Debug.LogError("fail 3");
             return false;
         }
 

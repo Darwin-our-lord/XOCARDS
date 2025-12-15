@@ -56,8 +56,8 @@ public class GameManager : MonoBehaviour
 
     public void PassTurn()
     {
+        selectedActiveCard = null;
         playerXturn = !playerXturn;
-        selectedActiveCard = null; 
 
         Player nextPlayer = playerXturn ? playerX : playerO;
         nextPlayer.DrawCard();
