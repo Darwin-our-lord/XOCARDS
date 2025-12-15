@@ -21,8 +21,11 @@ public class HandUI : MonoBehaviour
         {
             GameObject cardObj = Instantiate(cardPrefab, handContainer);
 
-            cardObj.GetComponentInChildren<TMP_Text>().text = card.m_cardName;
-            cardObj.GetComponent<Image>().sprite = card.m_sprite;
+            CardDisplayUI display = cardObj.GetComponent<CardDisplayUI>();
+            if (display != null)
+            {
+                display.SetData(card);
+            }
 
             // Set the listener to tell the GameManager which card was clicked
             cardObj.GetComponent<Button>().onClick.AddListener(() => manager.SelectCardToPlay(card));

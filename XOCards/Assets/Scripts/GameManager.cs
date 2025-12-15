@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     {
         Player activePlayer = playerXturn ? playerX : playerO;
         handUI.UpdateHandVisuals(activePlayer);
-        turnText.text = playerXturn ? "X's Turn: Place or Play Card" : "O's Turn: Place or Play Card";
+        turnText.text = playerXturn ? "Turn: X" : "Turn: O";
     }
 
     void Win(bool playerXWinner)
@@ -81,8 +81,8 @@ public class GameManager : MonoBehaviour
         
         winUI.SetActive(true);
 
-        if (playerXWinner) winnerText.text = "Winner is: x"; 
-        else winnerText.text = "Winner is: o"; 
+        if (playerXWinner) winnerText.text = "Winner is: X"; 
+        else winnerText.text = "Winner is: O"; 
 
 
 
