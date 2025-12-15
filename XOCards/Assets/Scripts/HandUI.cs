@@ -30,9 +30,6 @@ public class HandUI : MonoBehaviour
             {
                 cardSelect.SetCard(card);
             }
-
-            // Set the listener to tell the GameManager which card was clicked
-            cardObj.GetComponentInChildren<Button>().onClick.AddListener(() => manager.SelectCardToPlay(card));
         }
     }
 }

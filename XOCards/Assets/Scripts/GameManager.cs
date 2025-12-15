@@ -40,9 +40,9 @@ public class GameManager : MonoBehaviour
             if (card.effect.Activate(this, -1))
             {
                 activePlayer.hand.Remove(card);
+                handUI.UpdateHandVisuals(activePlayer);
                 selectedActiveCard = null;
 
-                handUI.UpdateHandVisuals(activePlayer);
                 OnCardPlayedSuccess();
             }
         }
