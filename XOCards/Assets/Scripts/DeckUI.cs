@@ -1,23 +1,20 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-public class HandUI : MonoBehaviour
+public class DeckUI : MonoBehaviour
 {
-    public Transform handContainer;
-    public GameObject cardPrefab;   
-    public GameManager manager;
+    public Transform deckContainer;
+    public GameObject cardPrefab;  
 
-    public void UpdateHandVisuals(Player player)
+    public void UpdateDeckVisuals(Player player)
     {
-        foreach (Transform child in handContainer)
+        foreach (Transform child in deckContainer)
         {
             Destroy(child.gameObject);
         }
 
-        foreach (Card card in player.hand)
+        foreach (Card card in player.deck.deck)
         {
-            GameObject cardObj = Instantiate(cardPrefab, handContainer);
+            GameObject cardObj = Instantiate(cardPrefab, deckContainer);
 
             CardDisplayUI display = cardObj.GetComponent<CardDisplayUI>();
             if (display != null)

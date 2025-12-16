@@ -5,6 +5,10 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject mainUI;
     public GameObject deckBuilderUI;
+
+    public Player playerX;
+    public Player playerO;
+    
     //button functions
     public void StartButton()
     {
@@ -28,5 +32,15 @@ public class MenuManager : MonoBehaviour
         mainUI.gameObject.SetActive(true);
         deckBuilderUI.gameObject.SetActive(false);
     }
+
+    public void PlayerXButton()
+    {
+        deckBuilderUI.GetComponent<DeckUI>().UpdateDeckVisuals(playerX);
+    }
+    public void PlayerOButton()
+    {
+        deckBuilderUI.GetComponent<DeckUI>().UpdateDeckVisuals(playerO);
+    }
+
 
 }
