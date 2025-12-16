@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8508785986011897132}
   - component: {fileID: 7037800952499945785}
   - component: {fileID: 8415417972844810493}
+  - component: {fileID: 6678102791659479390}
   m_Layer: 5
   m_Name: DeckCard
   m_TagString: Untagged
@@ -274,7 +275,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8508785986011897132}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6678102791659479390}
+        m_TargetAssemblyTypeName: DeckCardPicker, Assembly-CSharp
+        m_MethodName: CardPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6678102791659479390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703395413626920645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a06cbc029ac3634388807a25682fcfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 0}
+  manager: {fileID: 0}
+  deckBuilderUI: {fileID: 0}
 --- !u!1 &2668048695462714094
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class DeckUI : MonoBehaviour
                 display.SetData(card);
             }
 
-            CardSelect cardSelect = cardObj.GetComponent<CardSelect>();
+            DeckCardPicker cardSelect = cardObj.GetComponent<DeckCardPicker>();
             if (cardSelect != null)
             {
                 cardSelect.SetCard(card);

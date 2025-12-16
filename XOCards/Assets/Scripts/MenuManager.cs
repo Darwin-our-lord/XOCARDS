@@ -8,7 +8,8 @@ public class MenuManager : MonoBehaviour
 
     public Player playerX;
     public Player playerO;
-    
+    public Player ActivePlayer;
+
     //button functions
     public void StartButton()
     {
@@ -35,10 +36,12 @@ public class MenuManager : MonoBehaviour
 
     public void PlayerXButton()
     {
+        ActivePlayer = playerX;
         deckBuilderUI.GetComponent<DeckUI>().UpdateDeckVisuals(playerX);
     }
     public void PlayerOButton()
     {
+        ActivePlayer = playerO;
         deckBuilderUI.GetComponent<DeckUI>().UpdateDeckVisuals(playerO);
     }
 

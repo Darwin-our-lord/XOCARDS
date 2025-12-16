@@ -1,24 +1,25 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
-public class CardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class DeckCardPicker : MonoBehaviour
 {
-
     public Card card;
-    public GameManager manager;
+    public MenuManager manager;
+    public GameObject deckBuilderUI;
 
     private void Awake()
     {
-       manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        manager = GameObject.Find("Canvas").GetComponent<MenuManager>();
+        deckBuilderUI = GameObject.Find("DeckBuilderUI");
     }
     public void SetCard(Card card)
     {
         this.card = card;
     }
     public void CardPressed()
-    { 
-        manager.SelectCardToPlay(card);
+    {
+        manager.ActivePlayer.deckobj.deck.Remove(card);
+        deckBuilderUI.GetComponent<DeckUI>().UpdateDeckVisuals(manager.ActivePlayer);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
