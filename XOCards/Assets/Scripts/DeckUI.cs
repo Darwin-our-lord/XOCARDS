@@ -12,7 +12,7 @@ public class DeckUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (Card card in player.deck)
+        foreach (Card card in player.deckobj.deck)
         {
             GameObject cardObj = Instantiate(cardPrefab, deckContainer);
 
