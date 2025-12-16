@@ -399,7 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183691fe6b4b5dd4da406534164dfc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: {fileID: 11400000, guid: 48b9ffa2f85c41145836c2726c62f377, type: 2}
+  deckobj: {fileID: 11400000, guid: 48b9ffa2f85c41145836c2726c62f377, type: 2}
+  deck: []
   hand: []
   maxHandSize: 7
 --- !u!4 &668628732
@@ -582,7 +583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183691fe6b4b5dd4da406534164dfc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: {fileID: 11400000, guid: ded92af7f27959642b06b3e508119143, type: 2}
+  deckobj: {fileID: 11400000, guid: ded92af7f27959642b06b3e508119143, type: 2}
+  deck: []
   hand: []
   maxHandSize: 7
 --- !u!4 &762853762

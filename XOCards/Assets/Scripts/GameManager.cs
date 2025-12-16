@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        playerX.SetupDeck();
+        playerO.SetupDeck();
         playerX.Shuffle();
         playerO.Shuffle();
         StartDraw();

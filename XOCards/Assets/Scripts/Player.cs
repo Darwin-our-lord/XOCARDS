@@ -6,32 +6,36 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    public Deck deck; 
+    public Deck deckobj;
+    public List<Card> deck = new List<Card>();
     public List<Card> hand = new List<Card>();
 
     public int maxHandSize = 7;
-
+    public void SetupDeck()
+    {
+        deck = new List<Card>(deckobj.deck);
+    }
 
     public void Shuffle()
     {
-        int n = deck.deck.Count;
+        int n = deck.Count;
         while (n > 1)
         {
             n--;
             int k = UnityEngine.Random.Range(0, n + 1);
 
-            Card value = deck.deck[k];
-            deck.deck[k] = deck.deck[n];
-            deck.deck[n] = value;
+            Card value = deck[k];
+            deck[k] = deck[n];
+            deck[n] = value;
         }
     }
 
     public void DrawCard()
     {
-        if (deck.deck.Count > 0 && hand.Count < maxHandSize)
+        if (deck.Count > 0 && hand.Count < maxHandSize)
         {
-            Card drawnCard = deck.deck[0];
-            deck.deck.RemoveAt(0);
+            Card drawnCard = deck[0];
+            deck.RemoveAt(0);
             hand.Add(drawnCard);
 
         }

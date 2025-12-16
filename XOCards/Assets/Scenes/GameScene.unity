@@ -1601,7 +1601,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183691fe6b4b5dd4da406534164dfc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: {fileID: 11400000, guid: ded92af7f27959642b06b3e508119143, type: 2}
+  deckobj: {fileID: 11400000, guid: ded92af7f27959642b06b3e508119143, type: 2}
+  deck:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   hand: []
   maxHandSize: 7
 --- !u!4 &1204771563
@@ -1648,6 +1652,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57523e7312307774e9ef89f4251769eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainUI: {fileID: 0}
+  deckBuilderUI: {fileID: 0}
+  playerX: {fileID: 0}
+  playerO: {fileID: 0}
 --- !u!4 &1274672267
 Transform:
   m_ObjectHideFlags: 0
@@ -2108,7 +2116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183691fe6b4b5dd4da406534164dfc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: {fileID: 11400000, guid: 48b9ffa2f85c41145836c2726c62f377, type: 2}
+  deckobj: {fileID: 11400000, guid: 48b9ffa2f85c41145836c2726c62f377, type: 2}
+  deck:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   hand: []
   maxHandSize: 7
 --- !u!4 &1585991095
