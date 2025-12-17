@@ -21,8 +21,11 @@ public class DisplayCardPicker : MonoBehaviour
     {
         if(manager.ActivePlayer != null)
         {
-            manager.ActivePlayer.deckobj.deck.Add(card);
-            deckBuilderUI.GetComponent<DeckUI>().UpdateDeckVisuals(manager.ActivePlayer);
+            if (manager.ActivePlayer.deckobj.deck.Count < 15)
+            {
+                manager.ActivePlayer.deckobj.deck.Add(card);
+                deckBuilderUI.GetComponent<DeckUI>().UpdateDeckVisuals(manager.ActivePlayer);
+            }
         }
     }
 
