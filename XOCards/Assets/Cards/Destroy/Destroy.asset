@@ -15,5 +15,8 @@ MonoBehaviour:
   m_cardName: Destroy
   m_description: DESTROY AN X OR O
   m_sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  cardType: 3
   requiresTarget: 1
   effect: {fileID: 11400000, guid: dadf7b427d4a0b8468c889738574bdc0, type: 2}
+  duration: 0
+  delay: 0

@@ -15,5 +15,8 @@ MonoBehaviour:
   m_cardName: Drawer
   m_description: Draw a card
   m_sprite: {fileID: 7635723995111643501, guid: 422c5dd5e30b63a4db511b55f9a84dd6, type: 3}
+  cardType: 2
   requiresTarget: 0
   effect: {fileID: 11400000, guid: f69b90fbe96f98944a6552c9b3e2c381, type: 2}
+  duration: 0
+  delay: 0

@@ -28,7 +28,7 @@ public class SlotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 activePlayer.hand.Remove(cardToUse);
             }
 
-            manager.OnCardPlayedSuccess();
+            manager.OnCardPlayedSuccess(true);
         }
         else
         {

@@ -5,7 +5,7 @@ public enum CardType
     None,
     Table,
     Flash,
-    Timed
+    Delay
 }
 [CreateAssetMenu(fileName = "new card", menuName = "Card")]
 public class Card : ScriptableObject
@@ -15,16 +15,18 @@ public class Card : ScriptableObject
     public string m_cardName;
     [TextArea] public string m_description;
     public Sprite m_sprite;
+    
+    public CardType cardType;
 
     public bool requiresTarget = true;
 
     public CardEffect effect;
 
     [Header("Table effect")]
-    int duration;
+    public int duration;
 
     [Header("Timed effect")]
-    int delay;
+    public int delay;
 
 
 

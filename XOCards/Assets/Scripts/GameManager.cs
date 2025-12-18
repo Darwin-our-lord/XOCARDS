@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -5,13 +6,17 @@ public class GameManager : MonoBehaviour
 {
     [Header("Game State")]
     public bool playerXturn = true;
-    public Card selectedActiveCard; 
+    public Card selectedActiveCard;
+    public List<Card> activeCards = new List<Card>();
+    public List<(Card, int)> waitingCards = new List<(Card, int)>();
 
     [Header("References")]
     public XOPlacement XOPlacement;
     public Player playerX;
     public Player playerO;
     public HandUI handUI;
+    public ActiveEffectsUI activeEffectsUI;
+    public WaitingEffectsUI waitingEffectsUI;
 
     [Header("UI")]
     public GameObject winUI;
@@ -32,34 +37,55 @@ public class GameManager : MonoBehaviour
     public void SelectCardToPlay(Card card)
     {
         Player activePlayer = playerXturn ? playerX : playerO;
-        if (!activePlayer.hand.Contains(card)) return; 
+        if (!activePlayer.hand.Contains(card)) return;
 
-        if (card.requiresTarget)
+        if (card.cardType == CardType.Delay)
         {
-            selectedActiveCard = card;
-            turnText.text = $"Targeting with: {card.m_cardName}";
+            waitingCards.Add((card, card.delay));
+            activePlayer.hand.Remove(card);
+            OnCardPlayedSuccess(true);
+        }
+        else if (card.cardType == CardType.Table)
+        {
+            Debug.LogError("i cant be bothered to do this rn");
         }
         else
         {
-            if (card.effect.Activate(this, -1))
+            if (card.requiresTarget)
             {
-                activePlayer.hand.Remove(card);
-                handUI.UpdateHandVisuals(activePlayer);
-                selectedActiveCard = null;
+                selectedActiveCard = card;
+                turnText.text = $"Targeting with: {card.m_cardName}";
+            }
+            else
+            {
+                if (card.effect.Activate(this, -1))
+                {
+                    activePlayer.hand.Remove(card);
+                    //handUI.UpdateHandVisuals(activePlayer);
+                    selectedActiveCard = null;
 
-                OnCardPlayedSuccess();
+                    OnCardPlayedSuccess(true);
+                }
             }
         }
     }
 
-    public void OnCardPlayedSuccess()
+    public void OnCardPlayedSuccess(bool turnEnder)
     {
         CheckForWin();
-        PassTurn();
+        activeEffectsUI.UpdateActiveEffectsVisuals();
+        waitingEffectsUI.UpdateWaitingEffectsVisuals();
+        if (turnEnder) PassTurn();
     }
 
     public void PassTurn()
     {
+
+        for (int i = 0; i < waitingCards.Count; i++)
+        {
+            waitingCards[i] = (waitingCards[i].Item1, waitingCards[i].Item2 - 1);
+        }
+
         selectedActiveCard = null;
         playerXturn = !playerXturn;
 
