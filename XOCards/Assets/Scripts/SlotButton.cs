@@ -9,30 +9,9 @@ public class SlotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnSlotClicked()
     {
-        Card cardToUse = manager.selectedActiveCard;
-        if (cardToUse == null)
+        if (manager.selectedActiveCard != null)
         {
-            return;
-        }
-
-        if (!cardToUse.requiresTarget) return;
-
-        Player activePlayer = manager.playerXturn ? manager.playerX : manager.playerO;
-
-        bool success = cardToUse.effect.Activate(manager, slotIndex);
-
-        if (success)
-        {
-            if (manager.selectedActiveCard != null)
-            {
-                activePlayer.hand.Remove(cardToUse);
-            }
-
-            manager.OnCardPlayedSuccess(true);
-        }
-        else
-        {
-            Debug.Log($"Invalid target for card: {cardToUse.m_cardName}. Try again.");
+            manager.PlayCard(true, manager.selectedActiveCard, slotIndex);
         }
     }
 

@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,39 +37,49 @@ public class GameManager : MonoBehaviour
         UpdateTurnUI();
     }
 
-    public void SelectCardToPlay(Card card)
+    public void PlayCard(bool turnCard,Card card, int slotIndex = -1)
     {
         Player activePlayer = playerXturn ? playerX : playerO;
         if (!activePlayer.hand.Contains(card)) return;
 
-        if (card.cardType == CardType.Delay)
+        if (turnCard)
         {
-            waitingCards.Add((card, card.delay));
-            activePlayer.hand.Remove(card);
-            OnCardPlayedSuccess(true);
-        }
-        else if (card.cardType == CardType.Table)
-        {
-            Debug.LogError("i cant be bothered to do this rn");
-        }
-        else
-        {
-            if (card.requiresTarget)
+            if (card.cardType == CardType.Delay)
+            {
+                waitingCards.Add((card, card.delay));
+                activePlayer.hand.Remove(card);
+                OnCardPlayedSuccess(true);
+                return;
+            }
+
+            if (card.cardType == CardType.Table)
+            {
+                Debug.LogError("Table cards logic not implemented yet.");
+                return;
+            }
+
+            if (card.requiresTarget && slotIndex == -1)
             {
                 selectedActiveCard = card;
                 turnText.text = $"Targeting with: {card.m_cardName}";
             }
             else
             {
-                if (card.effect.Activate(this, -1))
+                if (card.effect.Activate(this, slotIndex))
                 {
                     activePlayer.hand.Remove(card);
-                    //handUI.UpdateHandVisuals(activePlayer);
                     selectedActiveCard = null;
-
                     OnCardPlayedSuccess(true);
                 }
+                else
+                {
+                    Debug.Log($"Invalid play or target for: {card.m_cardName}");
+                }
             }
+        }
+        else
+        {
+
         }
     }
 
