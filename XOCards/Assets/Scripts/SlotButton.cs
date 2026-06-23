@@ -4,16 +4,7 @@ using UnityEngine.UI;
 
 public class SlotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public int slotIndex; 
     public GameManager manager;
-
-    public void OnSlotClicked()
-    {
-        if (manager.selectedActiveCard != null)
-        {
-            manager.PlayCard(true, manager.selectedActiveCard, slotIndex);
-        }
-    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {

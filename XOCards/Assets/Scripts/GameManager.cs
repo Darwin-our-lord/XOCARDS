@@ -9,9 +9,10 @@ public class GameManager : MonoBehaviour
 {
     [Header("Game State")]
     public bool playerXturn = true;
-    public Card selectedActiveCard;
-    public List<Card> activeCards = new List<Card>();
-    public List<(Card, int)> waitingCards = new List<(Card, int)>();
+    public Card selectedActiveCard; //the card currently selected to be played / card currently waiting for a target
+    public List<Card> activeCards = new List<Card>(); //trigger cards currently active
+    public List<Card> tableCards = new List<Card>(); //table cards currently active
+    public List<(Card, int)> waitingCards = new List<(Card, int)>(); //delay cards waiting for activation
 
     [Header("References")]
     public XOPlacement XOPlacement;
@@ -26,6 +27,12 @@ public class GameManager : MonoBehaviour
     public TMP_Text winnerText;
     public TMP_Text turnText;
 
+    [Header("TargetingUI")]
+    [SerializeField] GameObject targetingSlotUI;
+    [SerializeField] GameObject targetinghandCardUI;
+    [SerializeField] GameObject targetingactiveEffectUI;
+    [SerializeField] GameObject targetingtableCardUI;
+
     void Start()
     {
         playerX.SetupDeck();
@@ -37,14 +44,46 @@ public class GameManager : MonoBehaviour
         UpdateTurnUI();
     }
 
-    public void PlayCard(bool turnCard,Card card, int slotIndex = -1)
+    public void PlayCard(Card card, int ?targetfound = null)
     {
         Player activePlayer = playerXturn ? playerX : playerO;
         if (!activePlayer.hand.Contains(card)) return;
 
-        if (turnCard)
+        if (card.requiresTarget)
         {
-            if (card.cardType == CardType.Delay)
+            selectedActiveCard = card;
+            CardTargeting(card.targetType);
+            return;
+        }
+
+        switch (card.cardType)
+        {
+            case CardType.None:
+                Debug.LogError($"{card.name} - card has no type");
+
+                break;
+            case CardType.Table:
+                Debug.LogError("Table cards logic not implemented yet.");
+
+                break;
+            case CardType.Trigger:
+                Debug.LogError("Trigger cards logic not implemented yet.");
+
+                break;
+            case CardType.Flash:
+
+                break;
+            case CardType.Delay:
+
+                break;
+            default:
+                Debug.LogError($"{card.name} - no cardtype found");
+
+                break;
+        }
+
+
+        if (card.cardType == CardType.Delay)
             {
                 waitingCards.Add((card, card.delay));
                 activePlayer.hand.Remove(card);
@@ -52,36 +91,50 @@ public class GameManager : MonoBehaviour
                 return;
             }
 
-            if (card.cardType == CardType.Table)
-            {
-                Debug.LogError("Table cards logic not implemented yet.");
-                return;
-            }
 
-            if (card.requiresTarget && slotIndex == -1)
-            {
-                selectedActiveCard = card;
-                turnText.text = $"Targeting with: {card.m_cardName}";
-            }
-            else
-            {
-                if (card.effect.Activate(this, slotIndex))
+            
+                if (card.effect.Activate(this))
                 {
                     activePlayer.hand.Remove(card);
                     selectedActiveCard = null;
                     OnCardPlayedSuccess(true);
                 }
-                else
-                {
-                    Debug.Log($"Invalid play or target for: {card.m_cardName}");
-                }
-            }
-        }
-        else
+    }
+    public void OnSlotClicked(int slot)
+    {
+        if(selectedActiveCard != null) 
         {
-
+            PlayCard(selectedActiveCard, slot);
         }
     }
+    #region "targeting"
+    public void CardTargeting(TargetType targetType)
+    {
+        switch (targetType)
+        {
+            case TargetType.None:
+                Debug.LogError($"{selectedActiveCard} has no targettype");
+                break;
+            case TargetType.slot:
+                targetingSlotUI.SetActive(true);
+
+                break;
+            case TargetType.handCard:
+
+                break;
+            case TargetType.activeEffect:
+
+                break;
+            case TargetType.tableCard:
+
+                break;
+            default:
+                Debug.LogError($"no TargetType found");
+                break;
+        }
+
+    }
+    #endregion
 
     public void OnCardPlayedSuccess(bool turnEnder)
     {

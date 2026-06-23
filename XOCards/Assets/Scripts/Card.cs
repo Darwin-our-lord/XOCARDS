@@ -4,8 +4,17 @@ public enum CardType
 {
     None,
     Table,
+    Trigger,
     Flash,
     Delay
+}
+public enum TargetType
+{
+    None,
+    slot,
+    handCard,
+    activeEffect,
+    tableCard
 }
 [CreateAssetMenu(fileName = "new card", menuName = "Card")]
 public class Card : ScriptableObject
@@ -19,13 +28,14 @@ public class Card : ScriptableObject
     public CardType cardType;
 
     public bool requiresTarget = true;
+    public TargetType targetType;
 
     public CardEffect effect;
 
-    [Header("Table effect")]
+    [Header("Trigger effect")]
     public int duration;
 
-    [Header("Timed effect")]
+    [Header("Delay effect")]
     public int delay;
 
 

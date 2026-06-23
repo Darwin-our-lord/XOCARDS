@@ -18,7 +18,7 @@ public class CardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
     public void CardPressed()
     { 
-        manager.PlayCard(true,card);
+        manager.PlayCard(card);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
